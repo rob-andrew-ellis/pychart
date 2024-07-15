@@ -22,14 +22,14 @@ def main() -> None:
 
 def generate_piechart(togo: float, done: float) -> Pie:
     requests = [
-        {'name': 'Remaining', 'value': togo},
-        {'name': 'Completed', 'value': done},
+        {'name': 'Remaining', 'value': togo, 'color': '#fe8689'},
+        {'name': 'Completed', 'value': done, 'color': '#b8dcd3'},
     ]
 
     return Pie(
         requests,
         radius=9,
-        autocolor=True,
+        autocolor=False,
         autocolor_pastel_factor=1,
         fill='⬤',
         legend={'line': 0, 'format': '{label} {name:<8} {percent:>5.2f}% [{value}]'}
