@@ -22,8 +22,8 @@ def main() -> None:
 
 def generate_piechart(togo: float, done: float) -> Pie:
     requests = [
-        {'name': 'Remaining', 'value': togo, 'color': '#fe8689'},
-        {'name': 'Completed', 'value': done, 'color': '#b8dcd3'},
+        {'name': 'Remaining', 'value': togo, 'color': '#5E81AC'},
+        {'name': 'Completed', 'value': done, 'color': '#8FBCBB'},
     ]
 
     return Pie(
