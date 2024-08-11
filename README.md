@@ -12,7 +12,7 @@ source ./venv/bin/activate
 
 3. Install the requirements inside the repo directory:
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage:
