@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pychart"
+version = "0.1.0"
+description = "Simple CLI piechart written in python"
+authors = ["rob-andrew-ellis <robandrewellis@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+term-piechart = "^0.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
