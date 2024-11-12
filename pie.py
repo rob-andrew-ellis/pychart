@@ -1,14 +1,16 @@
-from term_piechart import Pie
 import argparse
+
+from term_piechart import Pie
+
 
 def main() -> None:
     togo, done = read_hours()
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        'hours_passed', 
-        help='A number representing how many hours have passed (supports floats)',
-        type=float
+        "hours_passed",
+        help="A number representing how many hours have passed (supports floats)",
+        type=float,
     )
 
     args = parser.parse_args()
@@ -20,10 +22,11 @@ def main() -> None:
 
     print(generate_piechart(togo, done))
 
+
 def generate_piechart(togo: float, done: float) -> Pie:
     requests = [
-        {'name': 'Remaining', 'value': togo, 'color': '#5E81AC'},
-        {'name': 'Completed', 'value': done, 'color': '#8FBCBB'},
+        {"name": "Remaining", "value": togo, "color": "#7daea3"},
+        {"name": "Completed", "value": done, "color": "#a9b665"},
     ]
 
     return Pie(
@@ -31,12 +34,13 @@ def generate_piechart(togo: float, done: float) -> Pie:
         radius=9,
         autocolor=False,
         autocolor_pastel_factor=1,
-        fill='⬤',
-        legend={'line': 0, 'format': '{label} {name:<8} {percent:>5.2f}% [{value}]'}
+        fill="⬤",
+        legend={"line": 0, "format": "{label} {name:<8} {percent:>5.2f}% [{value}]"},
     )
 
+
 def read_hours() -> tuple[float, float]:
-    f = open('hours.txt', 'r')
+    f = open("hours.txt", "r")
     hours = f.readlines()
     f.close()
     togo = float(hours[0])
@@ -44,12 +48,13 @@ def read_hours() -> tuple[float, float]:
 
     return togo, done
 
+
 def write_hours(togo: float, done: float) -> None:
-    f = open('hours.txt', 'w')
-    f.write(str(togo) + '\n')
+    f = open("hours.txt", "w")
+    f.write(str(togo) + "\n")
     f.write(str(done))
     f.close()
 
-if __name__ == '__main__':
-    main()
 
+if __name__ == "__main__":
+    main()
